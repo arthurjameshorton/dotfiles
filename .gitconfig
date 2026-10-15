@@ -1,0 +1,12 @@
+[core]
+	editor = vim
+[alias]
+	gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
+	localonly = ! "git branch -vv | grep -v origin | awk '{ printf $3 \"\\n\"}' "
+[rerere]
+	enabled = true
+# identity and credential helper differ per machine and the work email
+# shouldn't be public; git silently skips this if the file doesn't exist.
+# Last so anything in it wins.
+[include]
+	path = ~/.gitconfig.local
