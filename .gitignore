@@ -1,0 +1,3 @@
+# work- and machine-specific config (internal hostnames, org/repo names, work
+# email, credential helper). Sourced/included if present, never published.
+*.local
